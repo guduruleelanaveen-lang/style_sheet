@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Style Guide – Leela Naveen Kumar Guduru</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #0D47A1;
+      --color-secondary: #1976D2;
+      --color-bg: #FFFFFF;
+      --color-panel: #F5F7FA;
+      --color-text: #212121;
+      --color-text-muted: #616161;
+      --color-border: #E0E0E0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: var(--color-primary);
+    }
+
+    header p {
+      margin: 0.25rem 0;
+      color: var(--color-text-muted);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary);
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-description {
+      margin-bottom: 1.25rem;
+      color: var(--color-text-muted);
+    }
+
+    /* COLOUR PALETTE */
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .color-swatch {
+      background-color: var(--color-panel);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      padding: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .color-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .color-info-title {
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+    }
+
+    .color-info-hex {
+      font-family: "Courier New", monospace;
+      font-size: 0.9rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .color-info-note {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .swatch-primary  .color-box { background-color: var(--color-primary); }
+    .swatch-secondary .color-box { background-color: var(--color-secondary); }
+    .swatch-bg       .color-box { background-color: var(--color-bg); }
+    .swatch-panel    .color-box { background-color: var(--color-panel); }
+    .swatch-text     .color-box { background-color: var(--color-text); }
+    .swatch-muted    .color-box { background-color: var(--color-text-muted); }
+    .swatch-border   .color-box { background-color: var(--color-border); }
+
+    /* TYPOGRAPHY */
+
+    .type-samples {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+
+    .type-block {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--color-border);
+    }
+
+    .type-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .type-meta {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .type-sample-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .type-sample-body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* BUTTONS */
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-secondary);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-panel);
+    }
+
+    .button-notes {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* COMPONENTS – CARD */
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--color-panel);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      max-width: 480px;
+    }
+
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-body {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .small-note {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+      .type-samples,
+      .components-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Portfolio Style Guide</h1>
+      <p><strong>Name:</strong> Leela Naveen Kumar Guduru</p>
+      <p>This page documents the core visual system for my portfolio website – including colours, typography, buttons and key components.</p>
+    </header>
+
+    <!-- COLOURS -->
+    <section id="colours">
+      <h2>Colours</h2>
+      <p class="section-description">
+        These colours define the visual identity of the portfolio. The primary blue is used for headings, key actions and emphasis. Neutrals support readability and structure.
+      </p>
+
+      <div class="color-grid">
+        <div class="color-swatch swatch-primary">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Primary</div>
+            <div class="color-info-hex">#0D47A1</div>
+            <div class="color-info-note">Buttons, key links, section titles.</div>
+          </div>
+        </div>
+
+        <div class="color-swatch swatch-secondary">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Secondary / Hover</div>
+            <div class="color-info-hex">#1976D2</div>
+            <div class="color-info-note">Hover states, accents, subtle highlights.</div>
+          </div>
+        </div>
+
+        <div class="color-swatch swatch-bg">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Page Background</div>
+            <div class="color-info-hex">#FFFFFF</div>
+            <div class="color-info-note">Main page background for maximum contrast.</div>
+          </div>
+        </div>
+
+        <div class="color-swatch swatch-panel">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Panel / Card Background</div>
+            <div class="color-info-hex">#F5F7FA</div>
+            <div class="color-info-note">Cards, sections, and soft-highlight areas.</div>
+          </div>
+        </div>
+
+        <div class="color-swatch swatch-text">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Primary Text</div>
+            <div class="color-info-hex">#212121</div>
+            <div class="color-info-note">Body copy, main content text.</div>
+          </div>
+        </div>
+
+        <div class="color-swatch swatch-muted">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Muted Text</div>
+            <div class="color-info-hex">#616161</div>
+            <div class="color-info-note">Subtitles, metadata, less prominent info.</div>
+          </div>
+        </div>
+
+        <div class="color-swatch swatch-border">
+          <div class="color-box"></div>
+          <div>
+            <div class="color-info-title">Borders / Dividers</div>
+            <div class="color-info-hex">#E0E0E0</div>
+            <div class="color-info-note">Thin separators between sections & cards.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section id="typography">
+      <h2>Typography</h2>
+      <p class="section-description">
+        Typography uses a clean, modern pairing: Montserrat for headings and Roboto for body text. This reflects a professional, technical portfolio style.
+      </p>
+
+      <div class="type-samples">
+        <div>
+          <div class="type-block">
+            <div class="type-label">Heading 1 – Page / Hero Title</div>
+            <div class="type-sample-heading" style="font-size: 2.5rem; font-weight: 700;">
+              Hello, I'm Naveen
+            </div>
+            <div class="type-meta">
+              Font: Montserrat, 48px, bold, colour: #0D47A1
+            </div>
+          </div>
+
+          <div class="type-block">
+            <div class="type-label">Heading 2 – Section Title</div>
+            <div class="type-sample-heading" style="font-size: 1.75rem; font-weight: 600;">
+              Projects
+            </div>
+            <div class="type-meta">
+              Font: Montserrat, 28–32px, semi-bold; used for section headings.
+            </div>
+          </div>
+
+          <div class="type-block">
+            <div class="type-label">Heading 3 – Subtitles / Card Titles</div>
+            <div class="type-sample-heading" style="font-size: 1.2rem; font-weight: 500;">
+              AI-powered Fraud Detection System
+            </div>
+            <div class="type-meta">
+              Font: Montserrat, ~22px, medium; used for project titles, sub-headings.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="type-block">
+            <div class="type-label">Body Text</div>
+            <p class="type-sample-body">
+              I am an MSc Artificial Intelligence student with a strong interest in web development, data, and real-time systems. My portfolio showcases projects across JavaScript, APIs, and AI.
+            </p>
+            <div class="type-meta">
+              Font: Roboto, 16px, regular, line-height ~1.5, colour: #212121
+            </div>
+          </div>
+
+          <div class="type-block">
+            <div class="type-label">Small / Meta Text</div>
+            <p class="type-sample-body" style="font-size: 0.9rem; color: var(--color-text-muted);">
+              2025 · JavaScript · API Integration · Postman
+            </p>
+            <div class="type-meta">
+              Font: Roboto, 14px, light/medium, colour: #616161; used for dates, tags, and captions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section id="buttons">
+      <h2>Buttons</h2>
+      <p class="section-description">
+        Buttons use the primary blue for clear calls to action, with hover states using the secondary shade. This keeps actions consistent and visually strong.
+      </p>
+
+      <div class="button-row">
+        <a href="#" class="btn-primary">Primary Button</a>
+        <a href="#" class="btn-outline">Outline Button</a>
+      </div>
+
+      <p class="button-notes">
+        Primary buttons are used for key actions like “View Projects” or “Contact Me”. Outline buttons are used for secondary actions such as “Download CV” or “View GitHub”.
+      </p>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section id="components">
+      <h2>Components – Card Example</h2>
+      <p class="section-description">
+        Cards are used to present projects or experience in a structured, scannable way. Background panels and subtle shadows help them stand out from the page.
+      </p>
+
+      <div class="components-grid">
+        <div>
+          <div class="card">
+            <div class="card-title">Real-Time API Dashboard</div>
+            <div class="card-meta">JavaScript · Open Data · Postman</div>
+            <div class="card-body">
+              A web-based dashboard that consumes a public UK open data API, visualising live information in a clean, responsive layout. Built with vanilla JavaScript and RESTful API calls.
+            </div>
+            <a href="#" class="btn-primary">View Project</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Usage Guidelines</h3>
+          <p class="small-note">
+            • Use cards for projects, experience blocks, or key skills.<br>
+            • Keep copy short and focused – title, 1–2 lines of meta, and a short description.<br>
+            • Always align card buttons with the global button styles.<br>
+            • Maintain consistent spacing between cards (e.g. 24–32px).
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
